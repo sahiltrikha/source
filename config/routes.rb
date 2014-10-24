@@ -1,5 +1,5 @@
 RsvApp::Application.routes.draw do
 
-  get "/angellist", to: "angellist#index"
-  root to: "angellist#index"
+  get "/startups", to: "startups#index"
+  root to: "startups#index"
 end
