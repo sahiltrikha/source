@@ -1,3 +1,27 @@
 <h1>These are all the Startups<h1>
- <% @angel_response %>
+ <% 
 
+ response = HTTParty.get('http://api.crunchbase.com/v/2/organizations?user_key=c1777422eedd4ca3a1b20375075fa8e7&page=1&order=created_at+DESC')["data"]["items"]
+
+ answer = ""
+
+ date = 1418187600 - 86400 - 86400
+
+ if (Time.now.to_i > date + 86400)
+  response.each do |x|
+
+    created_at = x["created_at"].to_i
+
+    next if created_at < date
+    #qualify startups here
+    answer = answer + x["name"] + "..."
+    #unless already added, add to database
+  end
+
+  date = date + 86400
+
+end
+%>
+<%=  answer %>
+
+<!-- angel_response["feed"][1] -->
