@@ -15,6 +15,10 @@
     next if created_at < date
     #qualify startups here
     answer = answer + x["name"] + "..."
+    # Startup.create(name: x["name"], crunchbase_path: x["path"])
+
+
+    # unless Startups.all.include()
     #unless already added, add to database
   end
 
@@ -22,6 +26,7 @@
 
 end
 %>
-<%=  answer %>
+<%= answer %>
+<%=   %>
 
 <!-- angel_response["feed"][1] -->

@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20141210034601) do
 
   create_table "startups", force: true do |t|
     t.string   "name"
-    t.string   "crunchbase_id"
     t.string   "crunchbase_path"
     t.integer  "added_to_crunchbase_at"
     t.string   "location"
